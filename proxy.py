@@ -27,10 +27,13 @@ for i,proxy in enumerate(data):
     }
     print('%s / %s | checking %s' % (i+1,l,http_proxy))
     try:
-        r = get(url = 'https://raw.githubusercontent.com/h4mid007/free-proxy-list/master/connection', verify=False, proxies=proxyDict, timeout=5)
-        if r.status_code == 200 and 'ok!' in r.text:
+        r = get(url = 'https://raw.githubusercontent.com/h4mid007/free-proxy-list/master/!', verify=False, proxies=proxyDict, timeout=5)
+        if r.status_code == 200 and 'passed!' in r.text:
             print(http_proxy)
             proxies.append(proxy['server'] + ':' + str(proxy['port']))
+            proxy.pop('iso_code', None)
+            proxy.pop('ping_time_ms', None)
+            proxy.pop('protocol', None)
             jsons.append(proxy)
     except:
         pass
