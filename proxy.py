@@ -34,6 +34,7 @@ for i,proxy in enumerate(data):
             proxy.pop('iso_code', None)
             proxy.pop('ping_time_ms', None)
             proxy.pop('protocol', None)
+            proxy.pop('loss_ratio', None)
             jsons.append(proxy)
     except:
         pass
