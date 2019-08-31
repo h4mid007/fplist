@@ -13,7 +13,7 @@ class myHandler(BaseHTTPRequestHandler):
         self.send_header('Content-type','text/html')
         self.end_headers()
         subprocess.run(["python", "proxy.py"])
-        self.wfile.write(bytes("Oh, Thanks Cronnie! I'm waked up! "), "UTF-8"))
+        self.wfile.write(b"Oh, Thanks Cronnie! I'm waked up!")
 
         return
 try:
