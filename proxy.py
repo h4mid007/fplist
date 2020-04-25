@@ -46,9 +46,9 @@ for proxy in proxies:
     prox = prox + proxy + '\n'
 ## pac proxies formatting
 pacs = '''
-function FindProxyForURL(url, host) {
+function FindProxyForURL(url, host) {{
 return "{0}";
-}
+}}
 '''
 pac = ''
 for proxy in proxies:
